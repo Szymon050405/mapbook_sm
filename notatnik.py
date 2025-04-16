@@ -1,5 +1,6 @@
-def  tomek(name:str)->None:
-        print(f"Cześć {name}, jestem Tomek")
-
-user_name="Szymon"
-tomek(user_name)
+while True:
+        day:str=input("Jaki dziś dzień")
+        if day == "środa":
+                print("Brawo zgadłeś")
+                break
+        print("Nie zgadłeś spróbuj jeszcze raz")
