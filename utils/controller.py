@@ -1,3 +1,6 @@
+from notatnik import get_coordinates
+
+
 def get_user_info(users_data: list) -> None:
     for user in users_data:
         print(f"Twój znajomy {user['name']}! z miejscowości{user["location"]} opublikował {user['posts']} postów")
@@ -24,3 +27,15 @@ def update_user(users_data: list) -> None:
             user["name"] = input("Podaj nowe imię użytkownika:")
             user["location"] = input("Podaj nową lokalizacje użytkownika:")
             user["location"] = int(input("Podaj nową liczbęm postów użytkownika:"))
+
+
+def get_map(users_data:list)->None:
+    import folium
+    mapa = folium.Map(location=[52.333, 21.0], zoom_start=6)
+    for user in users_data:
+        print(user["location"])
+        folium.Marker(
+            location=get_coordinates(user["location"]),
+            popup=f"{user["location"]} {user['name']}",
+        ).add_to(mapa)
+    mapa.save('mapa.html')
