@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6cc2bc4-ea2b-4c48-9257-2d61fc2f58a8" name="Changes" comment="wip: new function update user" />
+    <list default="true" id="c6cc2bc4-ea2b-4c48-9257-2d61fc2f58a8" name="Changes" comment="wip: new function update user">
+      <change beforePath="$PROJECT_DIR$/mapa.html" beforeDir="false" afterPath="$PROJECT_DIR$/mapa.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -163,9 +165,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.notatnik" />
         <item itemvalue="Python.model" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.controller" />
         <item itemvalue="Python.notatnik" />
       </list>
@@ -199,7 +201,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746990955953</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="wip: new function update user">
+      <option name="closed" value="true" />
+      <created>1747067093923</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747067093923</updated>
+    </task>
+    <task id="LOCAL-00003" summary="wip: new function update user">
+      <option name="closed" value="true" />
+      <created>1747067106770</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747067106770</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +236,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="wip: new function remove user" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip: new function remove user" />
+    <MESSAGE value="wip: new function update user" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip: new function update user" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/mapbook_sm$notatnik.coverage" NAME="notatnik Coverage Results" MODIFIED="1744794561329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
