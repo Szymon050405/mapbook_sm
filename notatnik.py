@@ -1,37 +1,29 @@
-users: list = [
-    {"name":"Szymon","location":"Pruszków","posts":400},
-    {"name":"Krzysztof","location":"Białobrzegi","posts":500},
-    {"name":"Maja","location":"Świecie","posts":300},
-    {"name":"Zuzanna","location":"Radzyń Podlaski","posts":700},
-]
+class User:
+    def __init__(self, name, surname, location, posts):
+        self.name = name
+        self.surname = surname
+        self.location = location
+        self.posts = posts
+        self.coordinates = self.get_coordinates()
 
-import folium
+    def get_coordinates(self) -> list:
+        import requests
+        from bs4 import BeautifulSoup
+        url = f"https://pl.wikipedia.org/wiki/{self.location}"
+        response = requests.get(url).text
+        response_html = BeautifulSoup(response, "html.parser")
+        try:
+            latitude = float(response_html.select(".latitude")[1].text.replace(",", "."))
+            longitude = float(response_html.select(".longitude")[1].text.replace(",", "."))
+            print(latitude)
+            print(longitude)
+            return [latitude, longitude]
+        except (IndexError, ValueError):
+            print("Nie udało się pobrać współrzędnych.")
+            return [0.0, 0.0]
 
+# Tworzenie użytkownika
+user_1 = User(name="Krzysztof", surname="Kowalski", location="Warszawa", posts=5)
 
-
-
-
-def get_coordinates(city_name:str)->list:
-    import requests
-    from bs4 import BeautifulSoup
-    url=f"https://pl.wikipedia.org/wiki/{city_name}"
-    response=requests.get(url).text
-    response_html=BeautifulSoup(response,"html.parser")
-    latitude=float(response_html.select(".latitude")[1].text.replace(",","."))
-    longitude=float(response_html.select(".longitude")[1].text.replace(",","."))
-    print(latitude)
-    print(longitude)
-    return [latitude,longitude]
-
-for user in users:
-    print(user["location"])
-    get_coordinates(user["location"])
-
-def get_map(users_data:list)->None:
-    mapa = folium.Map(location=[52.333, 21.0], zoom_start=6)
-    for user in users_data:
-        print(user["location"])
-        folium.Marker(location=get_coordinates(user["location"]),popup=f"{user["location"]} {user['name']}"
-        ).add_to(mapa)
-    mapa.save('mapa.html')
-
+# Wyświetlenie współrzędnych
+print(user_1.coordinates)
